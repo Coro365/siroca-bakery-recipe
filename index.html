@@ -13,15 +13,12 @@
   <div id="app" class=".container">
     <div class="p-3">
       <h1>{{ $t("message.app_name")}}</h1>
-      <h2>{{ $t("ingredient.ingredient") }}</h2>
-      <dl>
-        <dt>{{ $t("ingredient.water") }}</dt><dt>175 ml</dt>
-        <dt>{{ $t("ingredient.strong_flour") }}</dt><dt>250 g</dt>
-        <dt>{{ $t("ingredient.suger") }}</dt><dt>18 g</dt>
-        <dt>{{ $t("ingredient.salt") }}</dt><dt>4 g</dt>
-        <dt>{{ $t("ingredient.skim_milk") }}</dt><dt>6 g</dt>
-        <dt>{{ $t("ingredient.butter") }}</dt><dt>18 g</dt>
-        <dt>{{ $t("ingredient.dry_yeast") }}</dt><dt>2.7 g</dt>
+      <h2>{{ recipes.basic_bread.icon }}{{ $t("recipe.basic_bread") }}</h2>
+      <h3>{{ $t("ingredient.ingredient") }}</h3>
+
+      <dl v-for="ingredient in recipes.basic_bread.ingredients">
+        <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
+        <dd>{{ ingredient.quantity_10 }}</dd>
       </dl>
       <footer class="footer">
         <select v-model="selectedLocale" class="form-control">
