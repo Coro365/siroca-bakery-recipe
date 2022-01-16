@@ -21,11 +21,7 @@
         <dd>{{ ingredient.quantity_10 }}</dd>
       </dl>
       <footer class="footer">
-        <select v-model="selectedLocale" class="form-control">
-          <option v-for="locale in locales" :value="locale.value" v-on:click="selectLocale">
-            {{ locale.text }}
-          </option>
-        </select>
+        <select-locale></select-locale>
       </footer>
     </div>
   </div>

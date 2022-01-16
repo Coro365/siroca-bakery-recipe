@@ -1,4 +1,6 @@
 
+"use stract";
+
 const messages = {
   en: {
     message: {
@@ -73,11 +75,6 @@ const i18n = VueI18n.createI18n({
 });
 
 const myData = {
-  selectedLocale: "ja",
-  locales: [
-    { text: "日本語", value: "ja" },
-    { text: "English", value: "en" }
-  ],
   unit_table: {
     "litre": ["water"],
     "gram": ["strong_flour", "weak_flour", "suger", "salt", "skim_milk", "butter", "olive_oil", "dry_yeast"]
@@ -225,12 +222,30 @@ const myData = {
 const app = Vue.createApp({
   data(){
     return myData;
+  }
+});
+
+app.component('select-locale', {
+  data() {
+    return {
+      selectedLocale: "ja",
+      locales: [
+        { text: "日本語", value: "ja" },
+        { text: "English", value: "en" }
+      ]
+    }
   },
   methods:{
     selectLocale() {
       this.$i18n.locale = this.selectedLocale
     }
-  }
+  },
+  template: `
+    <select v-model="selectedLocale" class="form-control">
+      <option v-for="locale in locales" :value="locale.value" v-on:click="selectLocale">
+        {{ locale.text }}
+      </option>
+    </select>`
 });
 
 app.use(i18n);
