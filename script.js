@@ -75,6 +75,7 @@ const i18n = VueI18n.createI18n({
 });
 
 const myData = {
+  selected_recipe: "basic_bread",
   unit_table: {
     "litre": ["water"],
     "gram": ["strong_flour", "weak_flour", "suger", "salt", "skim_milk", "butter", "olive_oil", "dry_yeast"]
@@ -248,5 +249,25 @@ app.component('select-locale', {
     </select>`
 });
 
+app.component("select-recipe", {
+  props: ["recipes"],
+  data() {
+    return {
+      selected_recipe: "basic_bread"
+    }
+  },
+  methods: {
+    select_recipe() {
+      vm.selected_recipe = this.selected_recipe
+    }
+  },
+  template: `
+    <select v-model="selected_recipe" class="form-control">
+      <option v-for="recipe in recipes" :value="recipe.name" @click="select_recipe">
+        {{ recipe.icon }} {{ $t("recipe." + recipe.name) }}
+      </option>
+    </select>`
+});
+
 app.use(i18n);
-app.mount("#app");
+const vm = app.mount("#app");

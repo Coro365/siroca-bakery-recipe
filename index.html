@@ -13,9 +13,8 @@
   <div id="app" class=".container">
     <div class="p-3">
       <h1>{{ $t("message.app_name")}}</h1>
-      <h2>{{ recipes.basic_bread.icon }}{{ $t("recipe.basic_bread") }}</h2>
+      <select-recipe :recipes="recipes"></select-recipe>
       <h3>{{ $t("ingredient.ingredient") }}</h3>
-
       <dl v-for="ingredient in recipes.basic_bread.ingredients">
         <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
         <dd>{{ ingredient.quantity_10 }}</dd>
