@@ -4,7 +4,9 @@
 const messages = {
   en: {
     message: {
-      app_name: "Home bakery recipe"
+      app_name: "Home bakery recipe",
+      cooking_time: "cooking time",
+      menu_id: "menu ID"
     },
     ingredient: {
       ingredient: "ingredient",
@@ -36,7 +38,9 @@ const messages = {
   },
   ja: {
     message: {
-      app_name: "ホームベーカリーレシピ"
+      app_name: "ホームベーカリーレシピ",
+      cooking_time: "調理時間",
+      menu_id: "メニューID"
     },
     ingredient: {
       ingredient: "材料",
@@ -80,8 +84,8 @@ const myData = {
     "litre": ["water"],
     "gram": ["strong_flour", "weak_flour", "suger", "salt", "skim_milk", "butter", "olive_oil", "dry_yeast"]
   },
-  recipes: {
-              "basic_bread": {
+recipes: [
+              {
                 "name": "basic_bread",
                 "id": "1",
                 "time": "4",
@@ -89,49 +93,63 @@ const myData = {
                 "ingredients": [
                   {
                     "name": "water",
-                    "quantity_10": "175",
-                    "quantity_15": "220",
-                    "quantity_20": "290"
+                    "quantity": {
+                      "1_0": "175",
+                      "1_5": "220",
+                      "2_0": "290"
+                    }
                   },
                   {
                     "name": "strong_flour",
-                    "quantity_10": "250",
-                    "quantity_15": "320",
-                    "quantity_20": "410"
+                    "quantity": {
+                      "1_0": "250",
+                      "1_5": "320",
+                      "2_0": "410"
+                    }
                   },
                   {
                     "name": "suger",
-                    "quantity_10": "18",
-                    "quantity_15": "25",
-                    "quantity_20": "30"
+                    "quantity": {
+                      "1_0": "18",
+                      "1_5": "25",
+                      "2_0": "30"
+                    }
                   },
                   {
                     "name": "salt",
-                    "quantity_10": "4",
-                    "quantity_15": "6",
-                    "quantity_20": "8"
+                    "quantity": {
+                      "1_0": "4",
+                      "1_5": "6",
+                      "2_0": "8"
+                    }
                   },
                   {
                     "name": "skim_milk",
-                    "quantity_10": "6",
-                    "quantity_15": "8",
-                    "quantity_20": "10"
+                    "quantity": {
+                      "1_0": "6",
+                      "1_5": "8",
+                      "2_0": "10"
+                    }
                   },
                   {
                     "name": "butter",
-                    "quantity_10": "18",
-                    "quantity_15": "25",
-                    "quantity_20": "30"
+                    "quantity": {
+                      "1_0": "18",
+                      "1_5": "25",
+                      "2_0": "30"
+                    }
                   },
                   {
                     "name": "dry_yeast",
-                    "quantity_10": "2.7",
-                    "quantity_15": "2.8",
-                    "quantity_20": "2.8"
+                    "quantity": {
+                      "1_0": "2.7",
+                      "1_5": "2.8",
+                      "2_0": "2.8"
+                    }
                   }
                 ]
               },
-              "speedy_bread": {
+              {
                 "name": "speedy_bread",
                 "id": "2",
                 "time": "2",
@@ -139,49 +157,63 @@ const myData = {
                 "ingredients": [
                   {
                     "name": "water",
-                    "quantity_10": "175",
-                    "quantity_15": "220",
-                    "quantity_20": "290"
+                    "quantity": {
+                      "1_0": "180",
+                      "1_5": "220",
+                      "2_0": "290"
+                    }
                   },
                   {
                     "name": "strong_flour",
-                    "quantity_10": "250",
-                    "quantity_15": "320",
-                    "quantity_20": "410"
+                    "quantity": {
+                      "1_0": "270",
+                      "1_5": "350",
+                      "2_0": "430"
+                    }
                   },
                   {
                     "name": "suger",
-                    "quantity_10": "18",
-                    "quantity_15": "25",
-                    "quantity_20": "30"
+                    "quantity": {
+                      "1_0": "15",
+                      "1_5": "20",
+                      "2_0": "27"
+                    }
                   },
                   {
                     "name": "salt",
-                    "quantity_10": "4",
-                    "quantity_15": "6",
-                    "quantity_20": "8"
+                    "quantity": {
+                      "1_0": "5",
+                      "1_5": "6",
+                      "2_0": "7"
+                    }
                   },
                   {
                     "name": "skim_milk",
-                    "quantity_10": "6",
-                    "quantity_15": "8",
-                    "quantity_20": "10"
+                    "quantity": {
+                      "1_0": "8",
+                      "1_5": "10",
+                      "2_0": "13"
+                    }
                   },
                   {
                     "name": "butter",
-                    "quantity_10": "18",
-                    "quantity_15": "25",
-                    "quantity_20": "30"
+                    "quantity": {
+                      "1_0": "13",
+                      "1_5": "20",
+                      "2_0": "23"
+                    }
                   },
                   {
                     "name": "dry_yeast",
-                    "quantity_10": "2.7",
-                    "quantity_15": "2.8",
-                    "quantity_20": "2.8"
+                    "quantity": {
+                      "1_0": "4",
+                      "1_5": "5",
+                      "2_0": "6"
+                    }
                   }
                 ]
               },
-              "pizza_heavy": {
+              {
                 "name": "pizza_heavy",
                 "id": "2",
                 "time": "2",
@@ -189,35 +221,49 @@ const myData = {
                 "ingredients": [
                   {
                     "name": "water",
-                    "quantity_30": "180"
+                    "quantity": {
+                      "3": "180"
+                    }
                   },
                   {
                     "name": "olive_oil",
-                    "quantity_30": "20"
+                    "quantity": {
+                      "3": "20"
+                    }
                   },
                   {
                     "name": "strong_flour",
-                    "quantity_30": "280"
+                    "quantity": {
+                      "3": "200"
+                    }
                   },
                   {
                     "name": "suger",
-                    "quantity_30": "8"
+                    "quantity": {
+                      "3": "8"
+                    }
                   },
                   {
                     "name": "salt",
-                    "quantity_30": "4"
+                    "quantity": {
+                      "3": "4"
+                    }
                   },
                   {
                     "name": "skim_milk",
-                    "quantity_30": "8"
+                    "quantity": {
+                      "3": "8"
+                    }
                   },
                   {
                     "name": "dry_yeast",
-                    "quantity_30": "3"
+                    "quantity": {
+                      "3": "3"
+                    }
                   }
                 ]
               }
-            }
+            ]
 };
 
 const app = Vue.createApp({
@@ -267,6 +313,22 @@ app.component("select-recipe", {
         {{ recipe.icon }} {{ $t("recipe." + recipe.name) }}
       </option>
     </select>`
+});
+
+app.component("ingredients-list", {
+  props: ["selected_recipe", "recipes"],
+  computed: {
+  // methods: {
+    getSelectedRecipe() {
+      return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
+    },
+  },
+  template: `
+    <h3>{{ $t("ingredient.ingredient") }}</h3>
+    <dl v-for="ingredient in getSelectedRecipe.ingredients">
+      <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
+      <dd>{{ ingredient.quantity }}</dd>
+    </dl>`
 });
 
 app.use(i18n);

@@ -14,11 +14,7 @@
     <div class="p-3">
       <h1>{{ $t("message.app_name")}}</h1>
       <select-recipe :recipes="recipes"></select-recipe>
-      <h3>{{ $t("ingredient.ingredient") }}</h3>
-      <dl v-for="ingredient in recipes.basic_bread.ingredients">
-        <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
-        <dd>{{ ingredient.quantity_10 }}</dd>
-      </dl>
+      <ingredients-list :recipes="recipes" :selected_recipe="selected_recipe"></ingredients-list>
       <footer class="footer">
         <select-locale></select-locale>
       </footer>
