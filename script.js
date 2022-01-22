@@ -88,7 +88,7 @@ recipes: [
               {
                 "name": "basic_bread",
                 "id": "1",
-                "time": "4",
+                "time": "4:00",
                 "icon": "🍞",
                 "ingredients": [
                   {
@@ -152,7 +152,7 @@ recipes: [
               {
                 "name": "speedy_bread",
                 "id": "2",
-                "time": "2",
+                "time": "2:00",
                 "icon": "🍞",
                 "ingredients": [
                   {
@@ -216,7 +216,7 @@ recipes: [
               {
                 "name": "pizza_heavy",
                 "id": "2",
-                "time": "2",
+                "time": "2:00",
                 "icon": "🍕",
                 "ingredients": [
                   {
@@ -321,7 +321,7 @@ app.component("ingredients-list", {
   // methods: {
     getSelectedRecipe() {
       return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
-    },
+    }
   },
   template: `
     <h3>{{ $t("ingredient.ingredient") }}</h3>
@@ -330,6 +330,31 @@ app.component("ingredients-list", {
       <dd>{{ ingredient.quantity }}</dd>
     </dl>`
 });
+
+app.component("recipe-info", {
+  props: ["selected_recipe", "recipes"],
+  computed: {
+    getSelectedRecipe() {
+      return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
+    },
+    getETA() {
+      let eta = new Date();
+      let cooking_time = this.getSelectedRecipe.time;
+      eta.setHours(eta.getHours() + Number(cooking_time.split(":")[0]));
+      eta.setMinutes(eta.getMinutes() + Number(cooking_time.split(":")[1]));
+      return eta;
+    }
+  },
+  template: `
+    <dl>
+      <dt>{{ $t("message.menu_id") }}</dt>
+      <dd>{{ getSelectedRecipe.id }}</dd>
+      <dt>{{ $t("message.cooking_time") }}</dt>
+      <dd>{{ getSelectedRecipe.time }}</dd>
+      <dt>ETA</dt>
+      <dd>{{ getETA }}</dd>
+    </dl>`
+})
 
 app.use(i18n);
 const vm = app.mount("#app");
