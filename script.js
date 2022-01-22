@@ -6,7 +6,9 @@ const messages = {
     message: {
       app_name: "Home bakery recipe",
       cooking_time: "cooking time",
-      menu_id: "menu ID"
+      menu_id: "menu ID",
+      quantity: "quantity",
+      eta: "ETA"
     },
     ingredient: {
       ingredient: "ingredient",
@@ -34,13 +36,19 @@ const messages = {
       gram: "g",
       litre: "l",
       loaf: "loaf"
+    },
+    date: {
+      today: "today",
+      tomorrow: "tomorrow"
     }
   },
   ja: {
     message: {
       app_name: "ホームベーカリーレシピ",
       cooking_time: "調理時間",
-      menu_id: "メニューID"
+      menu_id: "メニューID",
+      quantity: "量",
+      eta: "完成予想時刻"
     },
     ingredient: {
       ingredient: "材料",
@@ -68,6 +76,10 @@ const messages = {
       gram: "グラム",
       litre: "リットル",
       loaf: "斤"
+    },
+    date: {
+      today: "今日",
+      tomorrow: "明日"
     }
   }
 };
@@ -338,11 +350,13 @@ app.component("recipe-info", {
       return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
     },
     getETA() {
-      let eta = new Date();
-      let cooking_time = this.getSelectedRecipe.time;
-      eta.setHours(eta.getHours() + Number(cooking_time.split(":")[0]));
-      eta.setMinutes(eta.getMinutes() + Number(cooking_time.split(":")[1]));
-      return eta;
+      let now = new Date();
+      let eta = now;
+      eta.setHours(eta.getHours() + Number(this.getSelectedRecipe.time.split(":")[0]));
+      eta.setMinutes(eta.getMinutes() + Number(this.getSelectedRecipe.time.split(":")[1]));
+      let eta_day = now.getDate() >= eta.getDate() ? "today" : "tomorrow";
+      let eta_clock = [("0" + eta.getHours()).slice(-2), ":", ("0" + eta.getMinutes()).slice(-2)].join("");
+      return [eta_day, eta_clock];
     }
   },
   template: `
@@ -351,8 +365,8 @@ app.component("recipe-info", {
       <dd>{{ getSelectedRecipe.id }}</dd>
       <dt>{{ $t("message.cooking_time") }}</dt>
       <dd>{{ getSelectedRecipe.time }}</dd>
-      <dt>ETA</dt>
-      <dd>{{ getETA }}</dd>
+      <dt>{{ $t("message.eta") }}</dt>
+      <dd>{{ $t("date." + getETA[0]) }} {{ getETA[1] }}</dd>
     </dl>`
 })
 
