@@ -329,17 +329,30 @@ app.component("select-recipe", {
 
 app.component("ingredients-list", {
   props: ["selected_recipe", "recipes"],
+  data() {
+    return {
+      selected_quantity: "2_0"
+    }
+  },
   computed: {
-  // methods: {
     getSelectedRecipe() {
       return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
-    }
+    },
+    getQuantityList() {
+      recipe = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
+      return Object.keys(recipe.ingredients[0].quantity);
+    },
   },
   template: `
     <h3>{{ $t("ingredient.ingredient") }}</h3>
+    <select v-model="selected_quantity" class="form-control">
+      <option v-for="quantity in getQuantityList" :value="quantity" @click="selected_quantity">
+        {{ quantity }}
+      </option>
+    </select>
     <dl v-for="ingredient in getSelectedRecipe.ingredients">
       <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
-      <dd>{{ ingredient.quantity }}</dd>
+      <dd>{{ ingredient.quantity[selected_quantity] }}</dd>
     </dl>`
 });
 
