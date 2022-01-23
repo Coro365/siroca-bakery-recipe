@@ -106,57 +106,57 @@ recipes: [
                   {
                     "name": "water",
                     "quantity": {
-                      "1_0": "175",
-                      "1_5": "220",
-                      "2_0": "290"
+                      "1": "175",
+                      "1.5": "220",
+                      "2": "290"
                     }
                   },
                   {
                     "name": "strong_flour",
                     "quantity": {
-                      "1_0": "250",
-                      "1_5": "320",
-                      "2_0": "410"
+                      "1": "250",
+                      "1.5": "320",
+                      "2": "410"
                     }
                   },
                   {
                     "name": "suger",
                     "quantity": {
-                      "1_0": "18",
-                      "1_5": "25",
-                      "2_0": "30"
+                      "1": "18",
+                      "1.5": "25",
+                      "2": "30"
                     }
                   },
                   {
                     "name": "salt",
                     "quantity": {
-                      "1_0": "4",
-                      "1_5": "6",
-                      "2_0": "8"
+                      "1": "4",
+                      "1.5": "6",
+                      "2": "8"
                     }
                   },
                   {
                     "name": "skim_milk",
                     "quantity": {
-                      "1_0": "6",
-                      "1_5": "8",
-                      "2_0": "10"
+                      "1": "6",
+                      "1.5": "8",
+                      "2": "10"
                     }
                   },
                   {
                     "name": "butter",
                     "quantity": {
-                      "1_0": "18",
-                      "1_5": "25",
-                      "2_0": "30"
+                      "1": "18",
+                      "1.5": "25",
+                      "2": "30"
                     }
                   },
                   {
                     "name": "dry_yeast",
                     "quantity": {
-                      "1_0": "2.7",
-                      "1_5": "2.8",
-                      "2_0": "2.8"
+                      "1": "2.7",
+                      "1.5": "2.8",
+                      "2": "2.8"
                     }
                   }
                 ]
@@ -170,64 +170,64 @@ recipes: [
                   {
                     "name": "water",
                     "quantity": {
-                      "1_0": "180",
-                      "1_5": "220",
-                      "2_0": "290"
+                      "1": "180",
+                      "1.5": "220",
+                      "2": "290"
                     }
                   },
                   {
                     "name": "strong_flour",
                     "quantity": {
-                      "1_0": "270",
-                      "1_5": "350",
-                      "2_0": "430"
+                      "1": "270",
+                      "1.5": "350",
+                      "2": "430"
                     }
                   },
                   {
                     "name": "suger",
                     "quantity": {
-                      "1_0": "15",
-                      "1_5": "20",
-                      "2_0": "27"
+                      "1": "15",
+                      "1.5": "20",
+                      "2": "27"
                     }
                   },
                   {
                     "name": "salt",
                     "quantity": {
-                      "1_0": "5",
-                      "1_5": "6",
-                      "2_0": "7"
+                      "1": "5",
+                      "1.5": "6",
+                      "2": "7"
                     }
                   },
                   {
                     "name": "skim_milk",
                     "quantity": {
-                      "1_0": "8",
-                      "1_5": "10",
-                      "2_0": "13"
+                      "1": "8",
+                      "1.5": "10",
+                      "2": "13"
                     }
                   },
                   {
                     "name": "butter",
                     "quantity": {
-                      "1_0": "13",
-                      "1_5": "20",
-                      "2_0": "23"
+                      "1": "13",
+                      "1.5": "20",
+                      "2": "23"
                     }
                   },
                   {
                     "name": "dry_yeast",
                     "quantity": {
-                      "1_0": "4",
-                      "1_5": "5",
-                      "2_0": "6"
+                      "1": "4",
+                      "1.5": "5",
+                      "2": "6"
                     }
                   }
                 ]
               },
               {
                 "name": "pizza_heavy",
-                "id": "2",
+                "id": "17",
                 "time": "2:00",
                 "icon": "🍕",
                 "ingredients": [
@@ -331,7 +331,7 @@ app.component("ingredients-list", {
   props: ["selected_recipe", "recipes"],
   data() {
     return {
-      selected_quantity: "2_0"
+      selected_quantity: "1"
     }
   },
   computed: {
@@ -340,13 +340,13 @@ app.component("ingredients-list", {
     },
     getQuantityList() {
       recipe = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
-      return Object.keys(recipe.ingredients[0].quantity);
+      return Object.keys(recipe.ingredients[0].quantity).sort((a, b) => a - b);
     },
   },
   template: `
     <h3>{{ $t("ingredient.ingredient") }}</h3>
     <select v-model="selected_quantity" class="form-control">
-      <option v-for="quantity in getQuantityList" :value="quantity" @click="selected_quantity">
+      <option v-for="quantity in getQuantityList" :value="quantity">
         {{ quantity }}
       </option>
     </select>
