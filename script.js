@@ -334,6 +334,11 @@ app.component("ingredients-list", {
       selected_quantity: "1"
     }
   },
+  beforeUpdate() {
+    this.$nextTick(function () {
+      if(this.getQuantityList.indexOf(this.selected_quantity) < 0){this.selected_quantity = this.getQuantityList[0]};
+    })
+  },
   computed: {
     getSelectedRecipe() {
       return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
