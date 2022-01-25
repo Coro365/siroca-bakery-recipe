@@ -13,9 +13,17 @@
   <div id="app" class=".container">
     <div class="p-3">
       <h1>{{ $t("message.app_name")}}</h1>
-      <select-recipe :recipes="recipes"></select-recipe>
-      <recipe-info :recipes="recipes" :selected_recipe="selected_recipe"></recipe-info>
-      <ingredients-list :recipes="recipes" :selected_recipe="selected_recipe"></ingredients-list>
+      <select-recipe
+        :recipes="recipes"
+      ></select-recipe>
+      <recipe-info
+        :recipes="recipes"
+        :selected_recipe="selected_recipe"
+      ></recipe-info>
+      <ingredients-list
+        :recipes="recipes"
+        :selected_recipe="selected_recipe"
+      ></ingredients-list>
       <footer class="footer">
         <select-locale></select-locale>
       </footer>
