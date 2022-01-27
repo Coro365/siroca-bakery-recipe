@@ -300,8 +300,8 @@ app.component('select-locale', {
     }
   },
   template: `
-    <select v-model="selectedLocale" class="form-control">
-      <option v-for="locale in locales" :value="locale.value" v-on:click="selectLocale">
+    <select v-model="selectedLocale" @change="selectLocale()" class="form-control">
+      <option v-for="locale in locales" :value="locale.value">
         {{ locale.text }}
       </option>
     </select>`
@@ -320,8 +320,12 @@ app.component("select-recipe", {
     }
   },
   template: `
-    <select v-model="selected_recipe" class="form-control">
-      <option v-for="recipe in recipes" :value="recipe.name" @click="select_recipe">
+    <select
+      v-model="selected_recipe"
+      @change="select_recipe()"
+      class="form-control"
+    >
+      <option v-for="recipe in recipes" :value="recipe.name">
         {{ recipe.icon }} {{ $t("recipe." + recipe.name) }}
       </option>
     </select>`
