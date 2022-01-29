@@ -110,550 +110,550 @@ const i18n = VueI18n.createI18n({
 
 const myData = {
   selected_recipe: "basic_bread",
-recipes: [
-            {
-              "name": "basic_bread",
-              "id": "1",
-              "time": "4:00",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "175",
-                    "1.5": "220",
-                    "2": "290"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "250",
-                    "1.5": "320",
-                    "2": "410"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "18",
-                    "1.5": "25",
-                    "2": "30"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "4",
-                    "1.5": "6",
-                    "2": "8"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "6",
-                    "1.5": "8",
-                    "2": "10"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "18",
-                    "1.5": "25",
-                    "2": "30"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "2.7",
-                    "1.5": "2.8",
-                    "2": "2.8"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "rice_bread",
-              "id": "1",
-              "time": "4:00",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "120",
-                    "1.5": "150"
-                  }
-                },
-                {
-                  "name": "rice",
-                  "quantity": {
-                    "1": "150",
-                    "1.5": "185"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "230",
-                    "1.5": "285"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "18",
-                    "1.5": "22"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "6",
-                    "1.5": "7"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "7",
-                    "1.5": "9"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "17",
-                    "1.5": "21"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "3",
-                    "1.5": "3.2"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "speedy_bread",
-              "id": "3",
-              "time": "2:38",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "180",
-                    "1.5": "220",
-                    "2": "290"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "270",
-                    "1.5": "350",
-                    "2": "430"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "15",
-                    "1.5": "20",
-                    "2": "27"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "5",
-                    "1.5": "6",
-                    "2": "7"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "8",
-                    "1.5": "10",
-                    "2": "13"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "13",
-                    "1.5": "20",
-                    "2": "23"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "4",
-                    "1.5": "5",
-                    "2": "6"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "soft_bread",
-              "id": "4",
-              "time": "4:57",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "190",
-                    "1.5": "300"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "260",
-                    "1.5": "390"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "18",
-                    "1.5": "25"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "5",
-                    "1.5": "6"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "8",
-                    "1.5": "11"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "22",
-                    "1.5": "35"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "3",
-                    "1.5": "4"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "french_bread_like_bread",
-              "id": "5",
-              "time": "6:06",
-              "icon": "🥖",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "200",
-                    "1.5": "260",
-                    "2": "310"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "260",
-                    "1.5": "300",
-                    "2": "370"
-                  }
-                },
-                {
-                  "name": "cake_flour",
-                  "quantity": {
-                    "1": "30",
-                    "1.5": "80",
-                    "2": "100"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "4",
-                    "1.5": "6",
-                    "2": "8"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "4.5",
-                    "1.5": "5.5",
-                    "2": "6.5"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "6",
-                    "1.5": "8",
-                    "2": "10"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "3",
-                    "1.5": "3.5",
-                    "2": "4"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "sweet_bread",
-              "id": "6",
-              "time": "4:37",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "80",
-                    "1.5": "110"
-                  }
-                },
-                {
-                  "name": "egg",
-                  "quantity": {
-                    "1": "60",
-                    "1.5": "80"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "220",
-                    "1.5": "285"
-                  }
-                },
-                {
-                  "name": "cake_flour",
-                  "quantity": {
-                    "1": "30",
-                    "1.5": "35"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "40",
-                    "1.5": "50"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "4",
-                    "1.5": "6"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "18",
-                    "1.5": "22"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "45",
-                    "1.5": "65"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "2.8",
-                    "1.5": "3"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "whole_wheat_bread",
-              "id": "7",
-              "time": "4:41",
-              "icon": "🍞",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "1": "200",
-                    "1.5": "300"
-                  }
-                },
-                {
-                  "name": "whole_wheat_flour",
-                  "quantity": {
-                    "1": "130",
-                    "1.5": "175"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "1": "130",
-                    "1.5": "195"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "1": "17",
-                    "1.5": "25"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "1": "5",
-                    "1.5": "6"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "1": "6",
-                    "1.5": "9"
-                  }
-                },
-                {
-                  "name": "butter",
-                  "quantity": {
-                    "1": "17",
-                    "1.5": "22"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "1": "3",
-                    "1.5": "4"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "pizza_heavy",
-              "id": "18",
-              "time": "1:25",
-              "icon": "🍕",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "3": "180"
-                  }
-                },
-                {
-                  "name": "olive_oil",
-                  "quantity": {
-                    "3": "20"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "3": "280"
-                  }
-                },
-                {
-                  "name": "suger",
-                  "quantity": {
-                    "3": "8"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "3": "4"
-                  }
-                },
-                {
-                  "name": "skim_milk",
-                  "quantity": {
-                    "3": "8"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "3": "3"
-                  }
-                }
-              ]
-            },
-            {
-              "name": "pizza_crispy",
-              "id": "18",
-              "time": "1:25",
-              "icon": "🍕",
-              "ingredients": [
-                {
-                  "name": "water",
-                  "quantity": {
-                    "5": "200"
-                  }
-                },
-                {
-                  "name": "olive_oil",
-                  "quantity": {
-                    "5": "20"
-                  }
-                },
-                {
-                  "name": "bread_flour",
-                  "quantity": {
-                    "5": "200"
-                  }
-                },
-                {
-                  "name": "cake_flour",
-                  "quantity": {
-                    "5": "200"
-                  }
-                },
-                {
-                  "name": "salt",
-                  "quantity": {
-                    "5": "3"
-                  }
-                },
-                {
-                  "name": "dry_yeast",
-                  "quantity": {
-                    "5": "4"
-                  }
-                }
-              ]
-            }
-          ]
+  recipes: [
+              {
+                "name": "basic_bread",
+                "id": "1",
+                "time": "4:00",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "175",
+                      "1.5": "220",
+                      "2": "290"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "250",
+                      "1.5": "320",
+                      "2": "410"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "18",
+                      "1.5": "25",
+                      "2": "30"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "4",
+                      "1.5": "6",
+                      "2": "8"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "6",
+                      "1.5": "8",
+                      "2": "10"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "18",
+                      "1.5": "25",
+                      "2": "30"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "2.7",
+                      "1.5": "2.8",
+                      "2": "2.8"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "rice_bread",
+                "id": "1",
+                "time": "4:00",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "120",
+                      "1.5": "150"
+                    }
+                  },
+                  {
+                    "name": "rice",
+                    "quantity": {
+                      "1": "150",
+                      "1.5": "185"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "230",
+                      "1.5": "285"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "18",
+                      "1.5": "22"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "6",
+                      "1.5": "7"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "7",
+                      "1.5": "9"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "17",
+                      "1.5": "21"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "3",
+                      "1.5": "3.2"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "speedy_bread",
+                "id": "3",
+                "time": "2:38",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "180",
+                      "1.5": "220",
+                      "2": "290"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "270",
+                      "1.5": "350",
+                      "2": "430"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "15",
+                      "1.5": "20",
+                      "2": "27"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "5",
+                      "1.5": "6",
+                      "2": "7"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "8",
+                      "1.5": "10",
+                      "2": "13"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "13",
+                      "1.5": "20",
+                      "2": "23"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "4",
+                      "1.5": "5",
+                      "2": "6"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "soft_bread",
+                "id": "4",
+                "time": "4:57",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "190",
+                      "1.5": "300"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "260",
+                      "1.5": "390"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "18",
+                      "1.5": "25"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "5",
+                      "1.5": "6"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "8",
+                      "1.5": "11"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "22",
+                      "1.5": "35"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "3",
+                      "1.5": "4"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "french_bread_like_bread",
+                "id": "5",
+                "time": "6:06",
+                "icon": "🥖",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "200",
+                      "1.5": "260",
+                      "2": "310"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "260",
+                      "1.5": "300",
+                      "2": "370"
+                    }
+                  },
+                  {
+                    "name": "cake_flour",
+                    "quantity": {
+                      "1": "30",
+                      "1.5": "80",
+                      "2": "100"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "4",
+                      "1.5": "6",
+                      "2": "8"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "4.5",
+                      "1.5": "5.5",
+                      "2": "6.5"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "6",
+                      "1.5": "8",
+                      "2": "10"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "3",
+                      "1.5": "3.5",
+                      "2": "4"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "sweet_bread",
+                "id": "6",
+                "time": "4:37",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "80",
+                      "1.5": "110"
+                    }
+                  },
+                  {
+                    "name": "egg",
+                    "quantity": {
+                      "1": "60",
+                      "1.5": "80"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "220",
+                      "1.5": "285"
+                    }
+                  },
+                  {
+                    "name": "cake_flour",
+                    "quantity": {
+                      "1": "30",
+                      "1.5": "35"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "40",
+                      "1.5": "50"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "4",
+                      "1.5": "6"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "18",
+                      "1.5": "22"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "45",
+                      "1.5": "65"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "2.8",
+                      "1.5": "3"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "whole_wheat_bread",
+                "id": "7",
+                "time": "4:41",
+                "icon": "🍞",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "1": "200",
+                      "1.5": "300"
+                    }
+                  },
+                  {
+                    "name": "whole_wheat_flour",
+                    "quantity": {
+                      "1": "130",
+                      "1.5": "175"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "1": "130",
+                      "1.5": "195"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "1": "17",
+                      "1.5": "25"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "1": "5",
+                      "1.5": "6"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "1": "6",
+                      "1.5": "9"
+                    }
+                  },
+                  {
+                    "name": "butter",
+                    "quantity": {
+                      "1": "17",
+                      "1.5": "22"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "1": "3",
+                      "1.5": "4"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "pizza_heavy",
+                "id": "18",
+                "time": "1:25",
+                "icon": "🍕",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "3": "180"
+                    }
+                  },
+                  {
+                    "name": "olive_oil",
+                    "quantity": {
+                      "3": "20"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "3": "280"
+                    }
+                  },
+                  {
+                    "name": "suger",
+                    "quantity": {
+                      "3": "8"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "3": "4"
+                    }
+                  },
+                  {
+                    "name": "skim_milk",
+                    "quantity": {
+                      "3": "8"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "3": "3"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "pizza_crispy",
+                "id": "18",
+                "time": "1:25",
+                "icon": "🍕",
+                "ingredients": [
+                  {
+                    "name": "water",
+                    "quantity": {
+                      "5": "200"
+                    }
+                  },
+                  {
+                    "name": "olive_oil",
+                    "quantity": {
+                      "5": "20"
+                    }
+                  },
+                  {
+                    "name": "bread_flour",
+                    "quantity": {
+                      "5": "200"
+                    }
+                  },
+                  {
+                    "name": "cake_flour",
+                    "quantity": {
+                      "5": "200"
+                    }
+                  },
+                  {
+                    "name": "salt",
+                    "quantity": {
+                      "5": "3"
+                    }
+                  },
+                  {
+                    "name": "dry_yeast",
+                    "quantity": {
+                      "5": "4"
+                    }
+                  }
+                ]
+              }
+            ]
 };
 
 const app = Vue.createApp({
