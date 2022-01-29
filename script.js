@@ -31,6 +31,7 @@ const messages = {
       whole_wheat_bread: "whole wheat bread",
       soft_bread: "soft bread",
       sweet_bread: "sweet bread",
+      french_bread_like_bread: "french bread like bread",
       rice_bread: "rice bread",
       pizza: "pizza",
       pizza_heavy: "pizza heavy",
@@ -78,6 +79,7 @@ const messages = {
       whole_wheat_bread: "全粒粉パン",
       soft_bread: "ソフトパン",
       sweet_bread: "スイートパン",
+      french_bread_like_bread: "フランスパン風パン",
       rice_bread: "ごはんパン",
       pizza: "ピザ",
       pizza_heavy: "ヘビーピザ",
@@ -362,6 +364,70 @@ recipes: [
               ]
             },
             {
+              "name": "french_bread_like_bread",
+              "id": "5",
+              "time": "6:06",
+              "icon": "🥖",
+              "ingredients": [
+                {
+                  "name": "water",
+                  "quantity": {
+                    "1": "200",
+                    "1.5": "260",
+                    "2": "310"
+                  }
+                },
+                {
+                  "name": "bread_flour",
+                  "quantity": {
+                    "1": "260",
+                    "1.5": "300",
+                    "2": "370"
+                  }
+                },
+                {
+                  "name": "cake_flour",
+                  "quantity": {
+                    "1": "30",
+                    "1.5": "80",
+                    "2": "100"
+                  }
+                },
+                {
+                  "name": "suger",
+                  "quantity": {
+                    "1": "4",
+                    "1.5": "6",
+                    "2": "8"
+                  }
+                },
+                {
+                  "name": "salt",
+                  "quantity": {
+                    "1": "4.5",
+                    "1.5": "5.5",
+                    "2": "6.5"
+                  }
+                },
+                {
+                  "name": "skim_milk",
+                  "quantity": {
+                    "1": "6",
+                    "1.5": "8",
+                    "2": "10"
+                  }
+                },
+                {
+                  "name": "dry_yeast",
+                  "quantity": {
+                    "1": "3",
+                    "1.5": "3.5",
+                    "2": "4"
+                  }
+                }
+              ]
+            },
+            {
               "name": "sweet_bread",
               "id": "6",
               "time": "4:37",
@@ -517,7 +583,7 @@ recipes: [
                 {
                   "name": "bread_flour",
                   "quantity": {
-                    "3": "200"
+                    "3": "280"
                   }
                 },
                 {
@@ -542,6 +608,50 @@ recipes: [
                   "name": "dry_yeast",
                   "quantity": {
                     "3": "3"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "pizza_crispy",
+              "id": "18",
+              "time": "1:25",
+              "icon": "🍕",
+              "ingredients": [
+                {
+                  "name": "water",
+                  "quantity": {
+                    "5": "200"
+                  }
+                },
+                {
+                  "name": "olive_oil",
+                  "quantity": {
+                    "5": "20"
+                  }
+                },
+                {
+                  "name": "bread_flour",
+                  "quantity": {
+                    "5": "200"
+                  }
+                },
+                {
+                  "name": "cake_flour",
+                  "quantity": {
+                    "5": "200"
+                  }
+                },
+                {
+                  "name": "salt",
+                  "quantity": {
+                    "5": "3"
+                  }
+                },
+                {
+                  "name": "dry_yeast",
+                  "quantity": {
+                    "5": "4"
                   }
                 }
               ]
