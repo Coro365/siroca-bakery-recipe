@@ -43,6 +43,7 @@ const messages = {
       milli: "m",
       gram: "g",
       litre: "l",
+      milli_litre: "ml",
       loaf: "loaf"
     },
     date: {
@@ -89,8 +90,9 @@ const messages = {
     unit: {
       kilo: "キロ",
       milli: "ミリ",
-      gram: "グラム",
+      gram: "g",
       litre: "リットル",
+      milli_litre: "ml",
       loaf: "斤"
     },
     date: {
@@ -108,11 +110,6 @@ const i18n = VueI18n.createI18n({
 
 const myData = {
   selected_recipe: "basic_bread",
-  unit_table: {
-    "litre": ["water"],
-    "gram": ["bread_flour", "cake_flour", "whole_wheat_flour", "egg", "rice",
-             "suger", "salt", "skim_milk", "butter", "olive_oil", "dry_yeast"]
-  },
 recipes: [
             {
               "name": "basic_bread",
@@ -716,7 +713,12 @@ app.component("ingredients-list", {
   props: ["selected_recipe", "recipes"],
   data() {
     return {
-      selected_quantity: "1"
+      selected_quantity: "1",
+      unit_table: {
+        "milli_litre": ["water"],
+        "gram": ["bread_flour", "cake_flour", "whole_wheat_flour", "egg", "rice",
+                 "suger", "salt", "skim_milk", "butter", "olive_oil", "dry_yeast"]
+      },
     }
   },
   beforeUpdate() {
@@ -733,6 +735,15 @@ app.component("ingredients-list", {
       return Object.keys(recipe.ingredients[0].quantity).sort((a, b) => a - b);
     },
   },
+  methods: {
+    select_unit(ingredient_name) {
+      let this_unit = '';
+      Object.keys(this.unit_table).forEach((unit)=>{
+        if(this.unit_table[unit].some((e) => e == ingredient_name)) {this_unit = unit};
+       });
+      return this_unit;
+    }
+  },
   template: `
     <h3>{{ $t("ingredient.ingredient") }}</h3>
     <select v-model="selected_quantity" class="form-control">
@@ -742,7 +753,7 @@ app.component("ingredients-list", {
     </select>
     <dl v-for="ingredient in getSelectedRecipe.ingredients">
       <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
-      <dd>{{ ingredient.quantity[selected_quantity] }}</dd>
+      <dd>{{ ingredient.quantity[selected_quantity] }} {{ $t("unit." + select_unit(ingredient.name)) }}</dd>
     </dl>`
 });
 
