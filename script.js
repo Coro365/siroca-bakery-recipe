@@ -644,10 +644,10 @@ app.component("recipe-info", {
     },
     getETA() {
       let now = new Date();
-      let eta = now;
+      let eta = new Date();
       eta.setHours(eta.getHours() + Number(this.getSelectedRecipe.time.split(":")[0]));
       eta.setMinutes(eta.getMinutes() + Number(this.getSelectedRecipe.time.split(":")[1]));
-      let eta_day = now.getDate() >= eta.getDate() ? "today" : "tomorrow";
+      let eta_day = (now.getDate() == eta.getDate()) ? "today" : "tomorrow";
       let eta_clock = [("0" + eta.getHours()).slice(-2), ":", ("0" + eta.getMinutes()).slice(-2)].join("");
       return [eta_day, eta_clock];
     }
