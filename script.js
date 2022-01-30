@@ -8,7 +8,9 @@ const messages = {
       cooking_time: "cooking time",
       menu_id: "menu ID",
       quantity: "quantity",
-      eta: "ETA"
+      eta: "ETA",
+      invested: "invested",
+      not_invested: "not invested",
     },
     ingredient: {
       ingredient: "ingredient",
@@ -57,7 +59,9 @@ const messages = {
       cooking_time: "調理時間",
       menu_id: "メニューID",
       quantity: "量",
-      eta: "完成予想時刻"
+      eta: "完成予想時刻",
+      invested: "投入完了",
+      not_invested: "投入未完了",
     },
     ingredient: {
       ingredient: "材料",
@@ -714,6 +718,7 @@ app.component("ingredients-list", {
   data() {
     return {
       selected_quantity: "1",
+      checkedIngredient: [],
       unit_table: {
         "milli_litre": ["water"],
         "gram": ["bread_flour", "cake_flour", "whole_wheat_flour", "egg", "rice",
@@ -734,6 +739,10 @@ app.component("ingredients-list", {
       recipe = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
       return Object.keys(recipe.ingredients[0].quantity).sort((a, b) => a - b);
     },
+    getInsertStatus() {
+      ingredients = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0].ingredients;
+      return (this.checkedIngredient.length == ingredients.length) ? "invested" : "not_invested";
+    }
   },
   methods: {
     select_unit(ingredient_name) {
@@ -752,9 +761,11 @@ app.component("ingredients-list", {
       </option>
     </select>
     <dl v-for="ingredient in getSelectedRecipe.ingredients">
+      <input type="checkbox" :value="ingredient.name" v-model="checkedIngredient" />
       <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
       <dd>{{ ingredient.quantity[selected_quantity] }} {{ $t("unit." + select_unit(ingredient.name)) }}</dd>
-    </dl>`
+    </dl>
+    <p>{{ $t("message." + getInsertStatus) }}</p>`
 });
 
 app.component("recipe-info", {
