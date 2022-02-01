@@ -718,7 +718,8 @@ app.component("ingredients-list", {
   data() {
     return {
       selected_quantity: "1",
-      checkedIngredient: [],
+      insertedIngredient: [],
+      beforeSelectedRecipe : this.selected_recipe,
       unit_table: {
         "milli_litre": ["water"],
         "gram": ["bread_flour", "cake_flour", "whole_wheat_flour", "egg", "rice",
@@ -729,6 +730,7 @@ app.component("ingredients-list", {
   beforeUpdate() {
     this.$nextTick(function () {
       if(this.getQuantityList.indexOf(this.selected_quantity) < 0){this.selected_quantity = this.getQuantityList[0]};
+      this.clearIngredientsWhenCangedRecipe();
     })
   },
   computed: {
@@ -741,7 +743,7 @@ app.component("ingredients-list", {
     },
     getInsertStatus() {
       ingredients = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0].ingredients;
-      return (this.checkedIngredient.length == ingredients.length) ? "invested" : "not_invested";
+      return (this.insertedIngredient.length == ingredients.length) ? "invested" : "not_invested";
     }
   },
   methods: {
@@ -751,6 +753,16 @@ app.component("ingredients-list", {
         if(this.unit_table[unit].some((e) => e == ingredient_name)) {this_unit = unit};
        });
       return this_unit;
+    },
+    clearIngredientsWhenCangedRecipe() {
+      if(this.selected_recipe != this.beforeSelectedRecipe){
+        this.clearIngredients();
+        this.beforeSelectedRecipe = this.selected_recipe;
+      };
+    },
+    clearIngredients() {
+      this.insertedIngredient = [];
+      console.log("clearInsertStatus");
     }
   },
   template: `
@@ -761,7 +773,7 @@ app.component("ingredients-list", {
       </option>
     </select>
     <dl v-for="ingredient in getSelectedRecipe.ingredients">
-      <input type="checkbox" :value="ingredient.name" v-model="checkedIngredient" />
+      <input type="checkbox" :value="ingredient.name" v-model="insertedIngredient" />
       <dt>{{ $t("ingredient." + ingredient.name) }}</dt>
       <dd>{{ ingredient.quantity[selected_quantity] }} {{ $t("unit." + select_unit(ingredient.name)) }}</dd>
     </dl>
