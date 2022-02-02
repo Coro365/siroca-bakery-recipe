@@ -738,11 +738,11 @@ app.component("ingredients-list", {
       return this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
     },
     getQuantityList() {
-      recipe = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0];
+      recipe = this.getSelectedRecipe;
       return Object.keys(recipe.ingredients[0].quantity).sort((a, b) => a - b);
     },
     getInsertStatus() {
-      ingredients = this.recipes.filter(recipe=>{return this.selected_recipe == recipe.name;})[0].ingredients;
+      ingredients = this.getSelectedRecipe.ingredients;
       return (this.insertedIngredient.length == ingredients.length) ? "invested" : "not_invested";
     }
   },
