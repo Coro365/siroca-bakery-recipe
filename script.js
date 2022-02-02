@@ -729,7 +729,7 @@ app.component("ingredients-list", {
   },
   beforeUpdate() {
     this.$nextTick(function () {
-      if(this.getQuantityList.indexOf(this.selected_quantity) < 0){this.selected_quantity = this.getQuantityList[0]};
+      this.selectDefaultQuantity();
       this.clearIngredientsWhenCangedRecipe();
     })
   },
@@ -753,6 +753,11 @@ app.component("ingredients-list", {
         if(this.unit_table[unit].some((e) => e == ingredient_name)) {this_unit = unit};
        });
       return this_unit;
+    },
+    selectDefaultQuantity() {
+      if(this.getQuantityList.indexOf(this.selected_quantity) < 0){
+        this.selected_quantity = this.getQuantityList[0]
+      };
     },
     clearIngredientsWhenCangedRecipe() {
       if(this.selected_recipe != this.beforeSelectedRecipe){
