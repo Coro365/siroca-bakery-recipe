@@ -61,7 +61,7 @@ const messages = {
       quantity: "量",
       eta: "完成予想時刻",
       invested: "投入完了",
-      not_invested: "投入未完了",
+      not_invested: "投入未達",
     },
     ingredient: {
       ingredient: "材料",
